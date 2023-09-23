@@ -197,7 +197,7 @@ async function runSeeds(){
 }
 
 
-// runSeeds()  
+// runSeeds()
 
 
 //  get friends from friends model

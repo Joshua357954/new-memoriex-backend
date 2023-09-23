@@ -1,8 +1,18 @@
 const { Sequelize, DataTypes } = require('sequelize')
 const config = require('./config/config.js')
-// Load Sequelize Config
-const sequelize = new Sequelize(config)
 
+const magic = "?sslmode=require"
+const connectionString = 'postgres://memoriex_db_user:GEtN0Kab4oRofeGk25UleOlRVcG0IRvb@dpg-ckb24tns0fgc73bvc0hg-a.frankfurt-postgres.render.com/memoriex_db'+magic
+
+// Load Sequelize Config
+const sequelize = process.env.PORT ? new Sequelize(connectionString,{
+  pool: {
+    max: 10,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
+}) :  new Sequelize(config)
 
 const db = {}
 
@@ -52,8 +62,8 @@ db.User.hasMany(db.Events)
 db.Events.belongsTo(db.User)
 
 //  User -x- Notifictions
-// db.User.hasMany(db.Notification)
-// db.Notification.belongsTo(db.User)
+db.User.hasMany(db.Notification)
+db.Notification.belongsTo(db.User)
 
 //  User -x- Reset Password
 db.User.hasOne(db.passwordReset)

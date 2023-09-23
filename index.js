@@ -38,7 +38,7 @@ function runBackgroundService () {
 }
 
 // Service Runner
-setInterval( runBackgroundService , 1000)
+// setInterval( runBackgroundService , 1000)
 
 
 

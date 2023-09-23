@@ -26,11 +26,6 @@ module.exports = ( sequelize, DataTypes ) => {
 			type:DataTypes.BOOLEAN,
 			defaultValue:false	
 		},
-		UserId:{
-			type:DataTypes.INTEGER(224),
-			defaultValue:false	
-		}
-
 	})
 	return Notification
 }
