@@ -23,7 +23,7 @@ db.DataTypes = DataTypes
 
 db.User = require("./UserModel/UserModel.js")(sequelize,DataTypes)
 db.Messages = require("./ChatModel/MessageModel.js")(sequelize,DataTypes)
-db.Conversations = require("./ChatModel/ConversationModel.js")(sequelize,DataTypes)
+db.Conversations = require("./ChatModel/conversationModel.js")(sequelize,DataTypes)
 db.Friend = require("./UserModel/FriendModel.js")(sequelize,DataTypes)
 db.Posts = require("./PostModel/PostModel.js")(sequelize,DataTypes)
 db.Comments = require("./PostModel/CommentModel.js")(sequelize,DataTypes)
