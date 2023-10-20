@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "client": "cd .. && cd memoriex && npm run dev -- --host",
     "project": " concurrently \"npm run start\"  \"npm run client\" "
   },
